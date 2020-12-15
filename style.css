@@ -1,0 +1,17 @@
+body{
+    background-image: url('./images/b1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1000px;
+}
+
+
+#inputBox{
+    border: 10px solid gray;
+    border-radius: 2px;
+    background-image: url('./images/back3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

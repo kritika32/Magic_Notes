@@ -8,6 +8,11 @@
     <title>Notes App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -27,7 +32,7 @@
 
             </ul>
             <div class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2"  type="search" placeholder="Search" id="text" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="text" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 " onclick="SEARCH()" href="#">Search</button>
             </div>
         </div>
@@ -35,20 +40,48 @@
 
 
     <div class="container my-3">
-        <h1>Welcome To Magic Notes</h1>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Add a note</h5>
+        <h1 class="mt-5 mx-3 mb-3" style="color: white;">Welcome To Magic Notes</h1>
+        <div id="inputBox" class="card">
+            <div class="card-body p-5">
                 <div class="form-group">
-                    <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                    <h5 class="card-title" style="color: white;font-size: larger;">Add title</h5>
+                    <input type="text" class="form-control bg-dark" id="addTitle" aria-describedby="title"
+                        placeholder="Enter title" style="color: white;">
                 </div>
-                <button class="btn btn-primary" id="addBtn">Add Note</button>
+                <h5 class="card-title" style="color: white;font-size: larger;">Add a note</h5>
+                <div class="form-group">
+                    <textarea class="form-control bg-dark" id="addTxt" rows="3" style="color: white;"></textarea>
+                </div>
+                <button class="btn btn-dark p-2" id="addBtn">Add Note</button>
             </div>
         </div>
         <hr>
-        <h1>Your Notes</h1>
+        <h1 style="color: white;">Your Notes</h1>
         <hr>
         <div id="notes" class="row container-fluid"> </div>
+        <div id="confirm">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Do you want to delete the note ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
