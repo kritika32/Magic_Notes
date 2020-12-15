@@ -30,6 +30,10 @@ __New Feature__
 <br><br>
 ![image](https://user-images.githubusercontent.com/59146229/102221932-c9088880-3f08-11eb-8a63-7486a4879587.png)
 <br><br>
+__Note deleted__
+<br><br>
+![image](https://user-images.githubusercontent.com/59146229/102222428-68c61680-3f09-11eb-88bf-9a6979181625.png)
+
 
 
 
